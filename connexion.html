@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="connexion.css">
+    <title>Page de Connexion</title>
+    
+</head>
+<body>
+    <div class="login-container">
+
+                <img src="./assets/logo-1.svg" alt="logo">
+                <div class="title">
+                    <p>Login to Campy</p>
+                </div>  
+                <button class="sign-google"> <img src="./assets/icon-1.svg" alt="logo google"> Se Connecter avec Google</button>
+
+            <form id="connexion-form">
+                    <input type="email" id="email" name="email"
+                    placeholder="Enter Your Email Here" required>
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password Here" required>
+            
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me"><label for="remember-me">Remember Me, </label>
+                    <a href="#" >Forgot your password</a> 
+                </div>
+                <button class="connexion-button" type="button" onclick="verifierConnexion()">Se Connecter</button>
+    </div>
+            </form>
+        <script src="connexion.js"></script>
+    </div>
+
+    <footer>
+        <div class="footer_up">
+                <div class="foot_item1">
+                    <img src="./assets/LOGO-NAVBAR.svg" alt="logo">
+                    <p>info@camp.com</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quos quidem sequi ullam. Animi praesentium velit voluptate repellat</p>
+                </div>
+                <div class="foot_item2">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li>Newsletter</li>
+                        <li>Products</li>
+                        <li>About Us</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="foot_item3">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><p>info@camp.com</p></li>
+                        <li><p>+216 99 999 999</p></li>
+                
+                    </ul>
+                </div>
+                <div class="foot_item4">
+                    <h4>Connect with us</h4>
+                    <ul>
+                        <li><a href=""><img src="./assets/icons8-facebook (1).svg" alt="facebook"></a></li>
+                        <li><a href=""><img src="./assets/icons8-instagram.svg" alt=""></a></li>
+                        <li><a href=""><img src="./assets/x-social-media-round-icon.svg" alt=""></a></li>
+                    
+                    </ul>
+                </div>
+               
+        </div>
+        <div class="footer_down"> 
+            <p>Copyright &COPY; 2024 Campy.tn All Rights Reserved</p>
+        </div>
+
+       
+        
+    </footer>
+</body>
+</html>
