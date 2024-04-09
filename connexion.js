@@ -1,6 +1,6 @@
 function verifierConnexion() {
     // Récupérer les valeurs du formulaire
-    var nom = document.getElementById("nom").value;
+    var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
 
     // Envoyer une requête au serveur pour vérifier la connexion
@@ -15,7 +15,7 @@ function verifierConnexion() {
         // Vérifier si le nom et l'email existent dans la base de données
         var utilisateurExiste = false;
         for (var i = 0; i < data.length; i++) {
-            if (data[i].nom === nom && data[i].email === email) {
+            if (data[i].password === password && data[i].email === email) {
                 utilisateurExiste = true;
                 break;
             }
