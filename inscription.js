@@ -29,7 +29,7 @@ function effectuerInscription() {
             window.location.href = "connexion.html"; // Change "login.html" to the actual URL of your login page
         } else {
             response.json().then(data => {
-                document.getElementById("error-message").innerText = `Cet email est déjà utilisé ${data.message}`;
+                document.getElementById("error-message").innerText = `Cet email est déjà utilisé `;
             });
         }
     })
