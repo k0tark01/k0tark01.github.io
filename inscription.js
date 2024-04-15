@@ -26,7 +26,7 @@ function effectuerInscription() {
         if (response.status === 201) {
             console.log("OK");
             // Rediriger l'utilisateur vers la page de connexion
-            window.location.href = "login.html"; // Change "login.html" to the actual URL of your login page
+            window.location.href = "connexion.html"; // Change "login.html" to the actual URL of your login page
         } else {
             response.json().then(data => {
                 document.getElementById("error-message").innerText = `Cet email est déjà utilisé ${data.message}`;
