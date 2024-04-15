@@ -1,40 +1,33 @@
 function effectuerInscription() {
-    // Récupérer les valeurs du formulaire
-    var nom = document.getElementById("nom").value;
-    var email = document.getElementById("email").value;
+    api = "https://iyed.pythonanywhere.com/inscription"
+    let nom = document.getElementById("firstname").value;
+    let prenom = document.getElementById("lastname").value;
+    let tel = document.getElementById("tel").value;
+    let email = document.getElementById("email").value;
+    let mdp = document.getElementById("password").value;
 
-    // Envoyer une requête au serveur pour effectuer l'inscription
-    fetch('https://iyed.pythonanywhere.com/', {
+    let nouveau_utilisateur = {
+        nom: nom,
+        prenom: prenom,
+        tel: tel,
+        email: email,
+        mdp: mdp
+    };
+
+    // Effectuer une requête POST vers l'API pour ajouter l'utilisateur
+    fetch(api, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            nom: nom,
-            email: email,
-        }),
+        body: JSON.stringify(nouveau_utilisateur)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.message); // Afficher le message de la réponse dans la console
-        /*// Vous pouvez également rediriger l'utilisateur vers une autre page ou effectuer d'autres actions ici
-        chargerUtilisateurs(); // Recharger la liste des utilisateurs après l'inscription*/
+    .then(response => {
+        if (response.status === 201) {
+            console.log("OK");
+        } else {
+            console.log(`Cet email est déjà utilisé ${response.status}`);
+        }
     })
-    .catch(error => console.error('Erreur lors de l\'inscription:', error));
+    .catch(error => console.error('Erreur lors de la requête:', error));
 }
-
-/*
-// Fonction pour charger les utilisateurs depuis le serveur
-function chargerUtilisateurs() {
-    fetch('https://yesser.pythonanywhere.com/')
-        .then(response => response.json())
-        .then(data => {
-            // Manipuler les données des utilisateurs ici (par exemple, afficher dans la console)
-            console.log(data);
-        })
-        .catch(error => console.error('Erreur lors du chargement des utilisateurs:', error));
-}
-
-// Appeler la fonction pour charger les utilisateurs lors du chargement de la page
-window.onload = chargerUtilisateurs;
-*/
