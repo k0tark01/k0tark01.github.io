@@ -4,30 +4,21 @@ function verifierConnexion() {
     var email = document.getElementById("email").value;
 
     // Envoyer une requête au serveur pour vérifier la connexion
-    fetch('https://iyed.pythonanywhere.com/', {
-        method: 'GET',
+    fetch('https://iyed.pythonanywhere.com/connexion', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
+        body: JSON.stringify({ email: email, mdp: password }) // Send email and password to server
     })
-    .then(response => response.json())
-    .then(data => {
-        // Vérifier si le nom et l'email existent dans la base de données
-        var utilisateurExiste = false;
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].password === password && data[i].email === email) {
-                utilisateurExiste = true;
-                break;
-            }
-        }
-
-        // Afficher le résultat dans la console
-        if (utilisateurExiste) {
-            console.log("Utilisateur existant");
+    .then(response => {
+        if (response.ok) {
+            // Redirect to "comingsoon.html" if login is successful
+            window.location.href = 'https://facebook.com/k0ark0&'; // Replace 'https://example.com/comingsoon.html' with the actual URL
         } else {
-            console.log("Utilisateur non trouvé");
+            console.log("Utilisateur non trouvé ou mot de passe incorrect");
+            // Handle unsuccessful login
         }
     })
     .catch(error => console.error('Erreur lors de la vérification de la connexion:', error));
 }
-
