@@ -14,7 +14,7 @@ function verifierConnexion() {
     .then(response => {
         if (response.ok) {
             // Redirect to "comingsoon.html" if login is successful
-            window.location.href = 'https://facebook.com/k0ark0&'; // Replace 'https://example.com/comingsoon.html' with the actual URL
+            window.location.href = 'soon.html'; 
         } else {
             console.log("Utilisateur non trouvé ou mot de passe incorrect");
             // Handle unsuccessful login
